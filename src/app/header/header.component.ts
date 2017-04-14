@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +9,9 @@ export class HeaderComponent implements OnInit {
 
   @Input()
   title = '保哥的網頁';
+
+  @Output()
+  titleChanged = new EventEmitter();
 
   constructor() { }
 
@@ -21,6 +24,8 @@ export class HeaderComponent implements OnInit {
     this.title = 'The Will Will Web';
     console.log(evt);
     console.log(evt.clientX);
+
+    this.titleChanged.emit(this.title);
 
     this.counter++;
   }
