@@ -32,8 +32,8 @@
 
       <div class="pull-left">
         <h1><a href="http://blog.miniasp.com/">{{ title }}</a></h1>
-        <h3 [ngClass]="{'highlight': is_h3_highlight}"
-            [ngStyle]="getStyle()"
+        <h3 [class.highlight]="is_h3_highlight"
+            [style.background-color]="'yellow'"
             (click)="is_h3_highlight = true;">記載著 Will 在網路世界的學習心得與技術分享</h3>
       </div>
 

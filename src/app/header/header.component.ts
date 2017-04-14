@@ -22,8 +22,4 @@ export class HeaderComponent implements OnInit {
 
   is_h3_highlight = false;
 
-  getStyle() {
-    return {'background-color': 'yellow'};
-  }
-
 }
