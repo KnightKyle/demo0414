@@ -14,10 +14,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  counter = 0;
+
   changeTitle(evt: MouseEvent) {
     this.title = 'The Will Will Web';
     console.log(evt);
     console.log(evt.clientX);
+
+    this.counter++;
   }
 
   is_h3_highlight = false;
