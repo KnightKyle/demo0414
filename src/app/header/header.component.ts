@@ -1,3 +1,4 @@
+import { DataService } from '../data.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -7,13 +8,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input()
-  title = '保哥的網頁';
-
-  @Output()
-  titleChanged = new EventEmitter();
-
-  constructor() { }
+  constructor(public datasvc: DataService) {
+  }
 
   ngOnInit() {
   }
@@ -21,11 +17,9 @@ export class HeaderComponent implements OnInit {
   counter = 0;
 
   changeTitle(evt: MouseEvent) {
-    this.title = 'The Will Will Web';
+    this.datasvc.title = 'The Will Will Web';
     console.log(evt);
     console.log(evt.clientX);
-
-    this.titleChanged.emit(this.title);
 
     this.counter++;
   }

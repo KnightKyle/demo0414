@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MaskPipe } from './mask.pipe';
+import { DataService } from "app/data.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { MaskPipe } from './mask.pipe';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
